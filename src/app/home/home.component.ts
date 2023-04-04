@@ -8,7 +8,7 @@ import { inputJSON, outputJSON, sampleInputJsonData } from './home.constant';
 })
 export class HomeComponent implements OnInit {
 
-  isConverterOn:boolean = false;
+  isConverterOn:boolean = true;
   placeholder: any;
   input!:any;
   output!:any;

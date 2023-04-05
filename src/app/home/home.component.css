@@ -6,7 +6,7 @@
 
 .converter {
   border: 1px solid black;
-  padding: 3%;
+  padding: 5%;
   display: flex;
   flex-wrap: wrap;
   justify-content: space-evenly;
@@ -14,13 +14,12 @@
 
 textarea {
   background-color: rgb(244, 196, 124);
-  height: 600px;
-  width: 400px;
+  height: 550px;
+  width: 380px;
 }
 
 .convertingBtn {
   margin-top: 25%;
-  height: 10%;
 }
 
 .container {
@@ -36,4 +35,10 @@ textarea {
 
 .text-center {
   margin: 40px 0 -40px 0;
+}
+
+.convertBtn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }

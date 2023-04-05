@@ -29,7 +29,7 @@ describe('HomeComponent', () => {
   })
 
   it('should get outputData as expected when given correct input in json format', () => {
-    component.input = JSON.stringify(sampleInputJsonData);
+    component.inputData = sampleInputJsonData;
     component.convertData();
     expect(component.outputData).toEqual(sampleOutputData);
   })
@@ -43,6 +43,19 @@ describe('HomeComponent', () => {
     component.output = 'sampleOutPut';
     component.clearOutput();
     expect(component.output).toBe('');
+  })
+
+  it('should throw an error if checkInput is called without json format input', () => {
+    let mockEvent = { target: { value: { "sampleInput": "sampleInput" } } };
+    component.isError = false;
+    component.checkInput(mockEvent);
+    expect(component.isError).toBeTruthy();
+  })
+
+  it('should parse an input if checkInput is called with proper json format input', () => {
+    let mockEvent = { target: { value: JSON.stringify(sampleInputJsonData) } };
+    component.checkInput(mockEvent);
+    expect(component.isError).toBeFalsy();
   })
 
 });

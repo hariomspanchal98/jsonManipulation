@@ -7,12 +7,14 @@
 </div>
 
 <div class="container" *ngIf="isConverterOn">
-  <div class="text-center">
-    <span><b>Please enter JSON data in input field to get desired output</b></span>
+  <div class="text-center" [style.color]="isError?'red':'black'">
+    <span><b>Please enter valid JSON data in input field to get desired output</b></span>
   </div>
   <div class="converter">
-    <textarea [placeholder]=placeholder [(ngModel)]=input (click)="clearOutput()"></textarea>
-    <button class="btn btn-primary convertingBtn" (click)="convertData()">Convert</button>
+    <textarea [placeholder]=placeholder (click)="clearOutput()" (keyup)="checkInput($event)"></textarea>
+    <div class="convertBtn">
+      <button class="btn btn-primary convertingBtn" (click)="convertData()" [disabled]="isError">Convert</button>
+    </div>
     <textarea [(ngModel)]=output></textarea>
   </div>
 </div>

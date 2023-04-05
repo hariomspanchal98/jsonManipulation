@@ -12,6 +12,7 @@ export class HomeComponent implements OnInit {
   placeholder: any;
   input!: any;
   output!: any;
+  isError:boolean = false;
   inputData!: inputJSON;
   outputData: outputJSON = {
     label: "",
@@ -29,7 +30,6 @@ export class HomeComponent implements OnInit {
   }
 
   convertData() {
-    this.inputData = JSON.parse(this.input);
     this.outputData.label = this.inputData?.firstName + ' ' + this.inputData?.lastName;
     this.outputData.items = this.getChilds(this.inputData.childs);
     this.output = JSON.stringify(this.outputData);
@@ -52,5 +52,15 @@ export class HomeComponent implements OnInit {
 
   clearOutput() {
     this.output = '';
+  }
+
+  checkInput(event:any){
+    this.input = event.target.value;
+    try{
+      this.inputData = JSON.parse(this.input);
+      this.isError = false;
+    } catch ( err ){
+      this.isError = true;
+    }
   }
 }

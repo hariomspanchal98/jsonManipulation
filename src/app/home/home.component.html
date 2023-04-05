@@ -1,17 +1,17 @@
-<div class="homeDiv" *ngIf="isConverterOn">
+<div class="homeDiv" *ngIf="!isConverterOn">
   <button class="btn btn-primary" type="button" (click)="toggleConverter()">Convert JSON data</button>
 </div>
 
-<div class="backBtnDiv" *ngIf="!isConverterOn">
+<div class="backBtnDiv" *ngIf="isConverterOn">
   <button class="btn btn-primary" type="button" (click)="toggleConverter()">Back to Main Page</button>
 </div>
 
-<div class="container" *ngIf="!isConverterOn">
+<div class="container" *ngIf="isConverterOn">
   <div class="text-center">
     <span><b>Please enter JSON data in input field to get desired output</b></span>
   </div>
   <div class="converter">
-    <textarea [placeholder]=placeholder [(ngModel)]=input></textarea>
+    <textarea [placeholder]=placeholder [(ngModel)]=input (click)="clearOutput()"></textarea>
     <button class="btn btn-primary convertingBtn" (click)="convertData()">Convert</button>
     <textarea [(ngModel)]=output></textarea>
   </div>

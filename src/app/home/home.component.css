@@ -1,10 +1,10 @@
-.homeDiv{
+.homeDiv {
   display: flex;
   justify-content: center;
   margin-top: 25%;
 }
 
-.converter{
+.converter {
   border: 1px solid black;
   padding: 3%;
   display: flex;
@@ -12,27 +12,28 @@
   justify-content: space-evenly;
 }
 
-textarea{
+textarea {
   background-color: rgb(244, 196, 124);
   height: 600px;
   width: 400px;
 }
 
-.convertingBtn{
+.convertingBtn {
   margin-top: 25%;
   height: 10%;
 }
-.container{
+
+.container {
   display: flex;
   flex-direction: column;
 }
 
-.backBtnDiv{
+.backBtnDiv {
   display: flex;
   justify-content: end;
   margin: 3% 3% 0% 0%;
 }
 
-.text-center{
+.text-center {
   margin: 40px 0 -40px 0;
 }
